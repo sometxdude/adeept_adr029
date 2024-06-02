@@ -46,6 +46,8 @@ commands_1 = [
 mark_1 = 0
 for x in range(3):
     for command in commands_1:
+        if "sudo pip" in command:
+            command += " --break-system-packages"
         if os.system(command) != 0:
             print("Error running installation step 1")
             mark_1 = 1
@@ -64,6 +66,8 @@ commands_2 = [
 mark_2 = 0
 for x in range(3):
     for command in commands_2:
+        if "sudo pip" in command:
+            command += " --break-system-packages"
         if os.system(command) != 0:
             print("Error running installation step 2")
             mark_2 = 1
